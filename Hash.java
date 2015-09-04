@@ -1,14 +1,25 @@
 import java.util.*;
 
+/**
+ * @author Delbert Custodio
+ * @author Yasmin Valdez
+ * 
+ * Esta clase se encarga de generar las intersecciones, sumas y la realizacion de 
+ * subconjuntos
+ *
+ */
 public class Hash {
 	
-	
+
 	Factory generador = new Factory();
 	private Set<String> conjunto1;
 	private Set<String> conjunto2;
 	private String ConM;
 	
-	public Hash(int seleccion){
+	/**
+	 * @param seleccion, que hace que el factory haga su trabajo
+	 */
+	public Hash(String seleccion){
 		
 		conjunto1 = generador.Factor(seleccion);
 		conjunto2 = generador.Factor(seleccion);
@@ -16,19 +27,31 @@ public class Hash {
 	}
 	
 	
-	public void Agregar(String e){
+	/**
+	 * @param e, elemento que se agrega
+	 */
+	public void Agregar(String e){//setter op
 		
 		conjunto1.add(e);
 		
 	}
 	
 	
-	public Set<String> Obtener(){
+	/**
+	 * @return el conjunto entero que se pida
+	 */
+	public Set<String> Obtener(){//getterc
 		return conjunto1;
 	}
 	
 	
 	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @param c, conjunto 3
+	 * @return la interseccion de conjuntos
+	 */
 	public Set<String> Intersectar( Set<String> a, Set<String> b, Set<String> c ){
 		conjunto2.clear();
 		conjunto2.addAll(a);
@@ -37,23 +60,52 @@ public class Hash {
 		return conjunto2;
 	}
 	
-	public Set<String> Almacenar(Set<String> a, Set<String> b){
+	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @return union de conjuntos
+	 */
+	public Set<String> Incluir(Set<String> a, Set<String> b){
 		
+		conjunto2.clear();
+		conjunto2.addAll(a);
+		conjunto2.removeAll(b);
+		return conjunto2;
+		
+	}
+	
+	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @return interseccion de 2 conjuntos
+	 */
+	public Set<String> Intersectar2(Set<String> a, Set<String> b){
 		conjunto2.clear();
 		conjunto2.addAll(a);
 		conjunto2.retainAll(b);
 		return conjunto2;
-		
 	}
 	
 	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @return suma de conjuntos
+	 */
 	public Set<String> Sumar(Set<String> a,Set<String> b){
 		conjunto2.clear();
 		conjunto2.addAll(a);
-		conjunto2.addAll(b);
 		return conjunto2;
 	}
 	
+	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @return si un conjunto es subconjunto del otro
+	 */
 	public boolean subconjunto(Set<String> a, Set<String> b){
 		
 		conjunto2.clear();
@@ -63,6 +115,14 @@ public class Hash {
 				
 	}
 	
+	
+	
+	/**
+	 * @param a, conjunto 1
+	 * @param b, conjunto 2
+	 * @param c, conjunto 3
+	 * @return el conjunto mas grande
+	 */
 	public Set<String> MayorC(Set<String> a, Set<String> b, Set<String> c){
 		
 		conjunto2.clear();
@@ -70,27 +130,19 @@ public class Hash {
 		if (a.size() >= b.size()){
 			conjunto2.addAll(a);
 			ConM = "Desarrolladores de Java";
-			
-			if (a.size()>=c.size()){
-		           return a;
-		       }
-			else{
-				ConM = "Desarrolladores de Celulares";
-				return c;
-			}
 		}
 			
 		else{
 			conjunto2.addAll(b);
 			ConM = "Desarrolladores Web";
-			
-			if (b.size()>=c.size()){
-		           return a;
-		       }
-			else{
-				ConM = "Desarrolladores de Celulares";
-				return c;
-			}
+		}
+		
+		if (conjunto2.size()>=c.size()){
+			return conjunto2;
+		}
+		else{
+			ConM = "Desarrolladores de Celular";
+			return c;
 		}
 	}
 	
@@ -101,6 +153,11 @@ public class Hash {
 	
 	public void setConM(String a){
 		ConM = a;
+	}
+	
+
+	public String GetS(Set<String> a){
+		return a.toString();
 	}
 	
 	

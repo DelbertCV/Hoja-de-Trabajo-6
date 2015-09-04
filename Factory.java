@@ -1,20 +1,28 @@
 import java.util.*;
 
+/**
+ * @author Yasmin Valdez
+ * @author Delbert Custodio
+ * Clase que instancia segun la opcion seleccionada
+ *
+ */
 public class Factory{
 
-public Set<String> Factor (int opcion){
+/**
+ * @param opcion, el objeto que se va a instanciar
+ * @return el objeto isntanciado
+ */
+public Set<String> Factor (String opcion){
     
-    if (opcion == 1){ 
+    if (opcion.equals("1")){ 
         return new HashSet<String>();
     }
     
-    if (opcion == 2){ 
+    if (opcion.equals("2")){ 
         return new TreeSet<String>();
     }
     
     return new LinkedHashSet<String>();      
 }
-public Set<String> getterOrden(){
-	return new TreeSet<String>();
-}
+
 }
