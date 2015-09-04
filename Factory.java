@@ -11,10 +11,8 @@ public Set<String> Factor (int opcion){
     if (opcion == 2){ 
         return new TreeSet<String>();
     }
-    if (opcion == 3){ 
-        return new LinkedHashSet<String>();
-    }        
-    return null; 
+    
+    return new LinkedHashSet<String>();      
 }
 public Set<String> getterOrden(){
 	return new TreeSet<String>();
