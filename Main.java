@@ -14,7 +14,7 @@ public class Main{
 		System.out.println("Universidad del Valle de Guatemala");
 		System.out.println("Algoritmos y Estructuras de Datos");
 		System.out.println("Seccion 10");
-		System.out.println("Yasmin Valdez, #carne");
+		System.out.println("Yasmin Valdez, #14079");
 		System.out.println("Delbert Custodio, 14246");
 		
 		System.out.println();
