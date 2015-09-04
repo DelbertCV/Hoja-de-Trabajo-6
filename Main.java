@@ -10,7 +10,7 @@ public class Main{
 		String nombre = null;
 		
 		
-		
+		//Introduccion
 		System.out.println("Universidad del Valle de Guatemala");
 		System.out.println("Algoritmos y Estructuras de Datos");
 		System.out.println("Seccion 10");
@@ -20,6 +20,7 @@ public class Main{
 		System.out.println();
 		System.out.println();
 		
+		//Advertencia
 		System.out.println("NOTA: \nSi se selecciona una opcion invalida \nel programa lo tomara en cuenta como si selecciono \nla ultima opcion \n");
 		
 		System.out.println("Por favor, seleccione una opcion:\n 1. HashSet \n 2. TreeSet \n 3. LinkedHashSet");
@@ -27,6 +28,7 @@ public class Main{
 		
 		scan = new Scanner(System.in);
 		
+		//validar las opciones elegidas
 		while (opcion == 0){
 			seleccion = scan.nextLine();
 			
@@ -40,16 +42,19 @@ public class Main{
 			}
 		}
 		
+		//Instanciacion de los conjuntos
 		Hash a = new Hash(seleccion);
 		Hash b = new Hash(seleccion);
 		Hash c = new Hash(seleccion);
 		
+		//Instanciacion de los conjuntos para mantenerlos ordenados
 		Hash orden1 = new Hash("2");
 		Hash orden2 = new Hash("2");
 		Hash orden3 = new Hash("2");
 		
 		boolean Ingreso = true;
 		
+		//Ingreso de datos
 		while (Ingreso){
 			System.out.println("Ingrese el nombre del programador: ");
 			nombre = scan.nextLine();
@@ -95,6 +100,8 @@ public class Main{
 		
 		//Termina ingreso
 		
+		
+		//Impresion de resultados
 		System.out.println("\n---------------------------------");
 		
 		System.out.println("Programadores de Java: "+a.Obtener());
@@ -111,6 +118,7 @@ public class Main{
 		System.out.println("3.	Desarrolladores Web y de celulares, sin experiencia en Java: "+a.Incluir(b.Intersectar2(d2,d3),d1));
 		System.out.println("4.	Desarrolladores Web o de celulares, sin experiencia en Java: "+a.Incluir(b.Sumar(d2, d3), d1));
 		
+		//Subconjunto o no?
 		if (a.subconjunto(d1, d3) == true ){
 			System.out.println("5.	Java es un subconjunto de los desarrolladores Web");
 		}
